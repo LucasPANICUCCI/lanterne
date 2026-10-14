@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="description" content="La Lanterne — un outil Révéla, par DSP Avocats. Vous avez reçu un courrier ou un acte : identifiez-le, repérez ce qui compte, et repartez avec une fiche de lecture claire." />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#F7F3EA" />
+<title>La Lanterne — décoder un acte reçu · un outil Révéla</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Cpolyline points='13.00,13.00%2013.01,12.93%2013.04,12.86%2013.09,12.80%2013.15,12.76%2013.23,12.73%2013.32,12.71%2013.42,12.72%2013.52,12.76%2013.62,12.81%2013.71,12.89%2013.79,12.99%2013.86,13.11%2013.90,13.25%2013.92,13.40%2013.92,13.56%2013.89,13.73%2013.82,13.90%2013.73,14.07%2013.60,14.23%2013.44,14.37%2013.26,14.49%2013.05,14.58%2012.82,14.64%2012.57,14.67%2012.31,14.66%2012.05,14.61%2011.79,14.51%2011.53,14.38%2011.29,14.20%2011.08,13.98%2010.89,13.72%2010.74,13.43%2010.63,13.11%2010.57,12.77%2010.55,12.41%2010.59,12.05%2010.69,11.68%2010.84,11.33%2011.05,10.99%2011.31,10.67%2011.62,10.40%2011.98,10.16%2012.37,9.97%2012.80,9.84%2013.25,9.78%2013.72,9.77%2014.19,9.84%2014.66,9.98%2015.11,10.18%2015.54,10.46%2015.93,10.80%2016.28,11.20%2016.56,11.65%2016.79,12.15%2016.94,12.69%2017.02,13.25%2017.01,13.83%2016.92,14.41%2016.75,14.98%2016.49,15.53%2016.15,16.05%2015.73,16.52%2015.24,16.93%2014.69,17.28%2014.09,17.54%2013.45,17.72%2012.77,17.81%2012.08,17.80%2011.39,17.69%2010.72,17.48%2010.07,17.18%209.46,16.77%208.91,16.28%208.42,15.71%208.02,15.06%207.71,14.36%207.50,13.61%207.40,12.82%207.41,12.02%207.53,11.22%207.77,10.44%208.13,9.69%208.59,8.99%209.15,8.35%209.81,7.79%2010.55,7.33%2011.35,6.97%2012.21,6.72%2013.10,6.60%2014.01,6.61%2014.92,6.75%2015.82,7.02%2016.67,7.41%2017.47,7.93%2018.19,8.57%2018.83,9.30%2019.35,10.13%2019.76,11.03%2020.04,12.00%2020.19,13.00%2020.19,14.02%2020.04,15.05%2019.75,16.05%2019.31,17.01%2018.74,17.90%2018.04,18.71%2017.22,19.43%2016.31,20.02%2015.30,20.49%2014.24,20.81%2013.13,20.98%2011.99,20.99%2010.86,20.83%209.75,20.52%208.68,20.05%207.69,19.42%206.78,18.66%205.99,17.77%205.32,16.76%204.80,15.67%204.43,14.50%204.24,13.28%204.21,12.03%204.37,10.78%204.70,9.56%205.20,8.39%205.88,7.29%206.70,6.29%207.67,5.41%208.76,4.67%209.95,4.09%2011.22,3.68%2012.55,3.45%2013.91,3.41%2015.27,3.56%2016.60,3.91%2017.88,4.45%2019.08,5.16%2020.17,6.05%2021.14,7.09%2021.96,8.26%2022.60,9.54%2023.06,10.92%2023.33,12.35%2023.39,13.82%2023.24,15.29%2022.88,16.73%2022.32,18.12%2021.56,19.43%2020.62,20.62%2019.52,21.68%2018.26,22.57%2016.89,23.29%2015.41,23.80%2013.87,24.11%2012.30,24.19%2010.71,24.05%209.15,23.68%207.65,23.10%206.24,22.30' fill='none' stroke='%23B9924C' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+<style>
+:root { --paper:#F7F3EA; --sheet:#FBF8F1; --navy:#1B2A4A; --ink:#22283A; --gold:#B9924C; --gold-soft:#D8BC85; --line:#E3DACA; --muted:#6E6A5E;
+  --u1:#7FA36C; --u2:#C99A45; --u3:#C2584C;
+  --serif:"Cormorant Garamond", Garamond, "Times New Roman", serif; --sans:"DM Sans","Helvetica Neue",Arial,sans-serif;
+  color-scheme: light; }
+*,*::before,*::after { box-sizing:border-box; }
+html { -webkit-text-size-adjust:100%; }
+body { margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px); }
+a { color:inherit; }
+button, input, textarea, select { font:inherit; color:inherit; }
+button { cursor:pointer; }
+[hidden] { display:none !important; }
+:focus-visible { outline:2px solid var(--gold); outline-offset:3px; }
+.app { max-width:680px; margin:0 auto; padding:0 20px; min-height:100vh; display:flex; flex-direction:column; }
+header.top { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:18px 0; border-bottom:1px solid var(--line); }
+.brand { display:inline-flex; align-items:center; gap:9px; color:var(--navy); text-decoration:none; }
+.brand svg { color:var(--gold); flex:none; }
+.brand span { font-family:var(--serif); font-size:22px; font-weight:600; letter-spacing:.08em; }
+.tool-name { font-size:13.5px; color:var(--muted); }
+main { flex:1; padding:28px 0 12px; }
+.screen { display:none; }
+.screen.on { display:block; animation:in .35s ease both; }
+@keyframes in { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
+@media (prefers-reduced-motion: reduce) { .screen.on { animation:none; } }
+.kicker { font-size:12.5px; font-weight:600; color:var(--gold); letter-spacing:.06em; text-transform:uppercase; margin:0 0 10px; }
+h1 { font-family:var(--serif); font-weight:500; color:var(--navy); font-size:clamp(40px,9vw,58px); line-height:1.02; margin:0 0 18px; letter-spacing:-.01em; }
+h1 em { font-style:italic; font-weight:400; color:var(--gold); }
+h2 { font-family:var(--serif); font-weight:600; color:var(--navy); font-size:clamp(27px,6vw,34px); line-height:1.12; margin:0 0 10px; }
+h3 { font-family:var(--serif); font-weight:600; color:var(--navy); font-size:22px; line-height:1.2; margin:0 0 6px; }
+.lede { font-family:var(--serif); font-size:clamp(20px,4.6vw,23px); line-height:1.45; margin:0 0 22px; }
+.muted { color:var(--muted); }
+.small { font-size:14px; }
+p { margin:0 0 14px; }
+.btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; border:1px solid var(--navy); background:transparent; border-radius:999px; padding:13px 24px; font-size:15.5px; font-weight:500; text-decoration:none; color:var(--navy); min-height:48px; }
+.btn.main { background:var(--navy); color:var(--sheet); }
+.btn.main:hover { background:#2A3D63; }
+.btn.ghost:hover { background:rgba(27,42,74,.06); }
+.btn.link { border:none; padding:8px 0; min-height:0; color:var(--muted); text-decoration:underline; text-underline-offset:3px; background:none; }
+.row { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+.facts { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin:24px 0 26px; }
+.facts div { background:var(--sheet); border:1px solid var(--line); border-radius:14px; padding:14px; }
+.facts strong { display:block; font-family:var(--serif); font-size:26px; color:var(--navy); line-height:1.1; font-weight:600; }
+.facts span { font-size:13px; color:var(--muted); }
+.panel { background:var(--sheet); border:1px solid var(--line); border-radius:16px; padding:20px; margin:0 0 16px; }
+.rule { border-left:3px solid var(--gold); padding:4px 0 4px 14px; margin:0 0 22px; font-size:15px; }
+
+/* Choix */
+.choices { display:grid; gap:10px; margin:0 0 20px; }
+.choice { display:block; width:100%; text-align:left; border:1px solid var(--line); background:var(--sheet); border-radius:14px; padding:16px 18px; min-height:58px; }
+.choice:hover { border-color:var(--gold); }
+.choice strong { display:block; font-weight:600; font-size:16.5px; color:var(--navy); }
+.choice span { display:block; font-size:14px; color:var(--muted); margin-top:2px; }
+.choice .u { display:inline-block; margin-top:8px; }
+.step-q { font-family:var(--serif); font-size:clamp(25px,5.8vw,31px); line-height:1.2; color:var(--navy); margin:0 0 18px; }
+
+/* Badge d'urgence */
+.u { font-size:12.5px; font-weight:600; border-radius:999px; padding:3px 11px; color:#fff; background:var(--c); }
+.u1 { --c:var(--u1); } .u2 { --c:var(--u2); } .u3 { --c:var(--u3); }
+
+/* Fiche */
+.fiche-head { border-radius:18px; padding:24px 22px; margin:0 0 18px; color:#F7F3EA; background:var(--navy); }
+.fiche-head .kicker { color:var(--gold-soft); }
+.fiche-head h2 { color:#F7F3EA; }
+.fiche-head p { color:#D3D7E0; margin:10px 0 0; }
+.twocol { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:0 0 16px; }
+@media (max-width:560px) { .twocol { grid-template-columns:1fr; } }
+.twocol .panel { margin:0; }
+.twocol h3 { font-size:19px; }
+.twocol p { margin:0; font-size:15px; }
+.is h3::before { content:"✓ "; color:var(--u1); }
+.isnot h3::before { content:"✕ "; color:var(--u3); }
+.section-title { font-family:var(--serif); font-weight:600; color:var(--navy); font-size:24px; margin:30px 0 10px; }
+.delay { background:#FFF7E6; border:1px solid var(--gold-soft); border-radius:14px; padding:16px 18px; margin:0 0 16px; }
+.delay.hot { background:#FBEAE7; border-color:#E7B7AF; }
+.delay p { margin:0 0 6px; font-size:15px; }
+.delay p:last-child { margin:0; }
+label.f { display:block; margin:0 0 14px; }
+label.f span { display:block; font-size:14.5px; font-weight:500; color:var(--navy); margin-bottom:5px; }
+label.f small { display:block; font-size:13px; color:var(--muted); margin-top:4px; }
+input[type=text], input[type=date], textarea, select { width:100%; border:1px solid var(--line); background:#fff; border-radius:10px; padding:11px 12px; font-size:16px; }
+textarea { min-height:84px; resize:vertical; }
+input:focus, textarea:focus, select:focus { outline:2px solid var(--gold-soft); border-color:var(--gold); }
+.checks { list-style:none; padding:0; margin:6px 0 0; }
+.checks li { margin:0 0 8px; }
+.checks label { display:flex; gap:10px; align-items:flex-start; cursor:pointer; font-size:15px; }
+.checks input { width:20px; height:20px; margin-top:2px; accent-color:var(--navy); flex:none; }
+.law { border-top:1px solid var(--line); padding:12px 0; }
+.law:first-child { border-top:none; padding-top:0; }
+.law p { margin:0 0 4px; font-size:15px; }
+.law a { font-size:13.5px; color:var(--navy); }
+.todo-list { list-style:none; padding:0; margin:0; counter-reset:t; }
+.todo-list li { counter-increment:t; position:relative; padding:0 0 14px 40px; }
+.todo-list li::before { content:counter(t); position:absolute; left:0; top:-4px; font-family:var(--serif); font-size:28px; color:var(--gold); line-height:1; }
+ul.avoid { margin:0; padding-left:20px; }
+ul.avoid li { margin-bottom:8px; }
+
+/* Fiche de lecture */
+.sheet { background:#fff; border:1px solid var(--line); border-radius:16px; padding:22px; margin:0 0 18px; }
+.sheet dl { display:grid; grid-template-columns:minmax(0,38%) 1fr; gap:8px 16px; margin:12px 0 0; font-size:15px; }
+.sheet dt { color:var(--muted); }
+.sheet dd { margin:0; color:var(--ink); font-weight:500; white-space:pre-wrap; }
+.sheet dd.empty { color:#B4AC9A; font-weight:400; font-style:italic; }
+@media (max-width:480px) { .sheet dl { grid-template-columns:1fr; gap:2px; } .sheet dd { margin-bottom:10px; } }
+.qlist { margin:0; padding-left:20px; }
+.qlist li { margin-bottom:8px; }
+.cta { background:var(--navy); color:#F7F3EA; border-radius:18px; padding:24px 22px; margin:26px 0 16px; }
+.cta h3 { color:#F7F3EA; }
+.cta p { color:#D3D7E0; font-size:15px; }
+.cta .btn { background:var(--gold); border-color:var(--gold); color:var(--navy); font-weight:600; }
+.warn { font-size:13.5px; color:var(--muted); border-top:1px solid var(--line); padding-top:14px; margin-top:20px; }
+.next-links a { font-weight:600; color:var(--navy); }
+
+footer.foot { border-top:1px solid var(--line); padding:22px 0 34px; font-size:13.5px; color:var(--muted); }
+footer.foot .sig { font-family:var(--serif); font-style:italic; font-size:19px; color:var(--navy); margin:0 0 8px; }
+footer.foot p { margin:0 0 6px; }
+details.mentions { margin-top:10px; }
+details.mentions summary { cursor:pointer; color:var(--navy); font-weight:500; }
+details.mentions h4 { font-family:var(--serif); font-size:18px; color:var(--navy); margin:16px 0 4px; }
+details.mentions p { font-size:13.5px; }
+.print-only { display:none; }
+@media print {
+  @page { margin:16mm 14mm; }
+  body { background:#fff; font-size:11.5pt; }
+  .no-print, header.top, details.mentions { display:none !important; }
+  .print-only { display:block; }
+  .app { max-width:none; padding:0; }
+  .screen { display:none !important; }
+  .screen.on { display:block !important; animation:none; }
+  .sheet { border:none; padding:0; }
+  .delay, .panel, .sheet { break-inside:avoid; }
+  .delay { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+}
+.skip{position:absolute;left:-9999px;top:8px;z-index:30;background:var(--navy);color:#fff;padding:8px 16px;border-radius:999px;font-size:14px;text-decoration:none}.skip:focus{left:12px}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+<div class="app">
+<header class="top">
+  <a class="brand" href="https://dsp-avocats.fr/" aria-label="Révéla, par DSP Avocats"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><polyline points="13.00,13.00 13.01,12.93 13.04,12.86 13.09,12.80 13.15,12.76 13.23,12.73 13.32,12.71 13.42,12.72 13.52,12.76 13.62,12.81 13.71,12.89 13.79,12.99 13.86,13.11 13.90,13.25 13.92,13.40 13.92,13.56 13.89,13.73 13.82,13.90 13.73,14.07 13.60,14.23 13.44,14.37 13.26,14.49 13.05,14.58 12.82,14.64 12.57,14.67 12.31,14.66 12.05,14.61 11.79,14.51 11.53,14.38 11.29,14.20 11.08,13.98 10.89,13.72 10.74,13.43 10.63,13.11 10.57,12.77 10.55,12.41 10.59,12.05 10.69,11.68 10.84,11.33 11.05,10.99 11.31,10.67 11.62,10.40 11.98,10.16 12.37,9.97 12.80,9.84 13.25,9.78 13.72,9.77 14.19,9.84 14.66,9.98 15.11,10.18 15.54,10.46 15.93,10.80 16.28,11.20 16.56,11.65 16.79,12.15 16.94,12.69 17.02,13.25 17.01,13.83 16.92,14.41 16.75,14.98 16.49,15.53 16.15,16.05 15.73,16.52 15.24,16.93 14.69,17.28 14.09,17.54 13.45,17.72 12.77,17.81 12.08,17.80 11.39,17.69 10.72,17.48 10.07,17.18 9.46,16.77 8.91,16.28 8.42,15.71 8.02,15.06 7.71,14.36 7.50,13.61 7.40,12.82 7.41,12.02 7.53,11.22 7.77,10.44 8.13,9.69 8.59,8.99 9.15,8.35 9.81,7.79 10.55,7.33 11.35,6.97 12.21,6.72 13.10,6.60 14.01,6.61 14.92,6.75 15.82,7.02 16.67,7.41 17.47,7.93 18.19,8.57 18.83,9.30 19.35,10.13 19.76,11.03 20.04,12.00 20.19,13.00 20.19,14.02 20.04,15.05 19.75,16.05 19.31,17.01 18.74,17.90 18.04,18.71 17.22,19.43 16.31,20.02 15.30,20.49 14.24,20.81 13.13,20.98 11.99,20.99 10.86,20.83 9.75,20.52 8.68,20.05 7.69,19.42 6.78,18.66 5.99,17.77 5.32,16.76 4.80,15.67 4.43,14.50 4.24,13.28 4.21,12.03 4.37,10.78 4.70,9.56 5.20,8.39 5.88,7.29 6.70,6.29 7.67,5.41 8.76,4.67 9.95,4.09 11.22,3.68 12.55,3.45 13.91,3.41 15.27,3.56 16.60,3.91 17.88,4.45 19.08,5.16 20.17,6.05 21.14,7.09 21.96,8.26 22.60,9.54 23.06,10.92 23.33,12.35 23.39,13.82 23.24,15.29 22.88,16.73 22.32,18.12 21.56,19.43 20.62,20.62 19.52,21.68 18.26,22.57 16.89,23.29 15.41,23.80 13.87,24.11 12.30,24.19 10.71,24.05 9.15,23.68 7.65,23.10 6.24,22.30" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg><span>Révéla</span></a>
+  <span class="tool-name">La Lanterne</span>
+</header>
+
+<main id="main">
+<!-- Accueil -->
+<section class="screen on" id="s-intro" aria-labelledby="t-intro">
+  <p class="kicker">Un outil Révéla · Comprendre</p>
+  <h1 id="t-intro">La Lanterne<br><em>décoder un acte reçu</em></h1>
+  <p class="lede">Un recommandé, un acte de commissaire de justice, une lettre de recouvrement : avant de répondre, il faut savoir ce que l’on tient entre les mains.</p>
+  <p class="muted">La Lanterne vous aide à identifier le document, à comprendre ce qu’il est et ce qu’il n’est pas, et à repérer les informations qui comptent, à commencer par les délais. Vous repartez avec une fiche de lecture à imprimer ou à montrer à votre avocat.</p>
+  <div class="facts" aria-label="En bref">
+    <div><strong>8</strong><span>documents courants</span></div>
+    <div><strong>5 min</strong><span>environ</span></div>
+    <div><strong>0</strong><span>donnée transmise</span></div>
+  </div>
+  <p class="rule"><strong>Avant tout, une règle :</strong> notez aujourd’hui la date à laquelle vous avez reçu le document, et gardez l’enveloppe. C’est souvent elle qui fait courir les délais.</p>
+  <div class="panel" id="resume" hidden>
+    <p style="margin:0 0 10px">Vous aviez commencé la lecture d’un document : <strong id="resume-name"></strong>.</p>
+    <div class="row"><button class="btn main" id="btn-resume">Reprendre</button><button class="btn ghost" id="btn-new">Un autre document</button></div>
+  </div>
+  <div class="row" id="start-row"><button class="btn main" id="btn-start">Identifier mon document</button><button class="btn link" id="btn-list">Je sais déjà de quoi il s’agit</button></div>
+  <p class="small muted" style="margin-top:22px">Vos réponses restent sur cet appareil. La Lanterne vous aide à lire un document ; elle ne vérifie pas sa validité et ne remplace pas l’analyse d’un avocat.</p>
+</section>
+
+<!-- Identification -->
+<section class="screen" id="s-ident" aria-live="polite">
+  <p class="kicker" id="ident-kicker">Identifier le document · 1 sur 2</p>
+  <p class="step-q" id="ident-q"></p>
+  <div class="choices" id="ident-choices"></div>
+  <div class="row"><button class="btn link" id="ident-back">Retour</button></div>
+</section>
+
+<!-- Fiche du document -->
+<section class="screen" id="s-fiche">
+  <div class="fiche-head" id="f-head"></div>
+  <div class="twocol">
+    <div class="panel is"><h3>Ce que c’est</h3><p id="f-is"></p></div>
+    <div class="panel isnot"><h3>Ce que ce n’est pas</h3><p id="f-isnot"></p></div>
+  </div>
+  <div class="delay" id="f-delay"></div>
+
+  <h3 class="section-title">Ce que je repère sur mon document</h3>
+  <p class="muted small">Recopiez ce que vous lisez, sans interpréter. Laissez vide ce que vous ne trouvez pas : c’est aussi une information.</p>
+  <div class="panel" id="f-fields"></div>
+
+  <h3 class="section-title">Ce que dit la loi</h3>
+  <div class="panel" id="f-law"></div>
+
+  <h3 class="section-title">Ce que je pourrais faire</h3>
+  <ol class="todo-list" id="f-todo"></ol>
+
+  <h3 class="section-title">Ce que j’évite</h3>
+  <ul class="avoid" id="f-avoid"></ul>
+
+  <div class="row" style="margin-top:26px">
+    <button class="btn main" id="btn-sheet">Établir ma fiche de lecture</button>
+    <button class="btn link" id="btn-other">Ce n’est pas mon document</button>
+  </div>
+</section>
+
+<!-- Fiche de lecture -->
+<section class="screen" id="s-sheet" aria-labelledby="t-sheet">
+  <div class="print-only"><p class="kicker">Révéla · La Lanterne</p></div>
+  <p class="kicker no-print">Ma fiche de lecture</p>
+  <h2 id="t-sheet"></h2>
+  <p class="small muted" id="sh-date"></p>
+  <div class="delay" id="sh-delay"></div>
+  <div class="sheet"><h3 style="font-size:20px">Ce que j’ai relevé</h3><dl id="sh-fields"></dl></div>
+  <div class="panel" id="sh-missing-wrap"><h3 style="font-size:20px">À vérifier</h3><ul class="qlist" id="sh-missing"></ul></div>
+  <div class="panel"><h3 style="font-size:20px">Mes questions pour un avocat</h3><ul class="qlist" id="sh-questions"></ul></div>
+  <div class="panel"><h3 style="font-size:20px">Mes prochaines actions</h3><ol class="todo-list" id="sh-todo"></ol></div>
+  <div class="panel"><h3 style="font-size:20px">Références</h3><div id="sh-law"></div></div>
+  <p class="next-links small" id="sh-links"></p>
+
+  <div class="cta no-print">
+    <h3>Faire le point avec le cabinet</h3>
+    <p>Le bilan amiable gratuit : cinquante questions, sur papier, pour examiner votre situation et les voies amiables possibles. Sans engagement. Si un délai court, dites-le dès votre premier message.</p>
+    <a class="btn" id="cta-mail" href="mailto:contact@dsp-avocats.fr?subject=Bilan%20amiable%20gratuit%20%E2%80%94%20La%20Lanterne">Écrire au cabinet</a>
+  </div>
+
+  <div class="row no-print">
+    <button class="btn main" id="btn-print">Imprimer ou enregistrer en PDF</button>
+    <button class="btn ghost" id="btn-edit">Modifier mes relevés</button>
+    <button class="btn link" id="btn-again">Lire un autre document</button>
+  </div>
+  <p class="warn">La Lanterne vous aide à lire un document, pas à en apprécier la validité ni à décider de la conduite à tenir. Les délais rappelés sont ceux du droit commun : votre document peut relever d’un régime particulier. Faites vérifier votre situation par un avocat, surtout lorsqu’un délai court.</p>
+</section>
+</main>
+
+<footer class="foot">
+  <p class="sig">Le droit existe lorsqu’on le révèle.</p>
+  <p>Révéla, par SELARL DSP Avocats, société d’avocats inscrite au Barreau de Nice. 8 bis rue Andrioli, Le Capitole V, 06000 Nice. <a href="mailto:contact@dsp-avocats.fr">contact@dsp-avocats.fr</a></p>
+  <p class="no-print"><button class="btn link" id="btn-erase" style="font-size:13.5px">Effacer mes données de cet appareil</button></p>
+  <details class="mentions" id="mentions-legales">
+    <summary>Mentions légales et confidentialité</summary>
+    <h4>Éditeur</h4>
+    <p>La Lanterne est éditée par la SELARL DSP Avocats, société d’avocats inscrite au Barreau de Nice, au capital de 402 euros, SIREN 978 376 234. Siège : 8 bis rue Andrioli, Le Capitole V, 06000 Nice. Téléphone : 04 93 97 66 66. Courriel : contact@dsp-avocats.fr.</p>
+    <h4>Directeur de la publication</h4>
+    <p>SELARL DSP Avocats, représentée par ses cogérants, Lucas Panicucci et Claire Delmasse Simoni.</p>
+    <h4>Hébergement</h4>
+    <p>Vercel Inc., 440 North Barranca Avenue, Suite 4133, Covina, Californie 91723, États-Unis. vercel.com.</p>
+    <h4>Confidentialité</h4>
+    <p>La Lanterne fonctionne entièrement dans votre navigateur. Ce que vous saisissez est enregistré uniquement dans le stockage local de votre appareil, pour vous permettre de reprendre votre lecture. Rien n’est transmis au cabinet. Le site n’utilise ni cookie publicitaire ni outil de mesure d’audience. Le bouton « Effacer mes données » supprime tout.</p>
+    <p>Si vous écrivez au cabinet, les informations que vous transmettez sont traitées par la SELARL DSP Avocats pour répondre à votre demande. Elles sont couvertes par le secret professionnel de l’avocat. Vous pouvez demander à tout moment l’accès à vos données, leur rectification ou leur suppression, à contact@dsp-avocats.fr.</p>
+    <h4>Nature de l’outil</h4>
+    <p>La Lanterne est un outil pédagogique. Elle présente des repères généraux du droit commun, vérifiés sur Légifrance à la date de publication. Elle ne constitue pas une consultation juridique, ne vérifie pas la régularité d’un acte et ne remplace pas l’analyse personnalisée d’un avocat.</p>
+    <h4>Propriété intellectuelle</h4>
+    <p>Les textes, visuels et outils du site sont la propriété de la SELARL DSP Avocats. Toute reproduction sans autorisation est interdite.</p>
+  </details>
+</footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* Liens vers les autres outils : à renseigner au fil des mises en ligne. Un lien vide n'est pas affiché. */
+  var LIENS = { sentinelle: "", vigie: "", trame: "" };
+  var KEY = "revela-lanterne-v1";
+  var VERIF = "Références vérifiées sur Légifrance le 9 octobre 2026.";
+
+  function L(id) { return "https://www.legifrance.gouv.fr/codes/article_lc/" + id; }
+  var REF = {
+    c1344:  { t: "Article 1344 du Code civil", u: L("LEGIARTI000032042162") },
+    c13441: { t: "Article 1344-1 du Code civil", u: L("LEGIARTI000032035273") },
+    p56:    { t: "Article 56 du Code de procédure civile", u: L("LEGIARTI000054560943") },
+    p538:   { t: "Article 538 du Code de procédure civile", u: L("LEGIARTI000006410858") },
+    p680:   { t: "Article 680 du Code de procédure civile", u: L("LEGIARTI000028424543") },
+    p1413:  { t: "Article 1413 du Code de procédure civile", u: L("LEGIARTI000044200307") },
+    p1416:  { t: "Article 1416 du Code de procédure civile", u: L("LEGIARTI000006412571") },
+    eR2211: { t: "Article R. 221-1 du Code des procédures civiles d’exécution", u: L("LEGIARTI000025938575") },
+    eR2113: { t: "Article R. 211-3 du Code des procédures civiles d’exécution", u: L("LEGIARTI000053497803") },
+    eR21111:{ t: "Article R. 211-11 du Code des procédures civiles d’exécution", u: L("LEGIARTI000034747451") },
+    eR1244: { t: "Article R. 124-4 du Code des procédures civiles d’exécution", u: L("LEGIARTI000027015026") },
+    eL1118: { t: "Article L. 111-8 du Code des procédures civiles d’exécution", u: L("LEGIARTI000028747701") },
+    b24:    { t: "Article 24 de la loi n° 89-462 du 6 juillet 1989", u: "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000047900019" }
+  };
+
+  /* Les huit documents. urg : 1 = pas de délai fixé par la loi, 2 = une date à tenir, 3 = délai court. */
+  var DOCS = {
+    mise: {
+      nom: "La lettre de mise en demeure", court: "Mise en demeure", urg: 1, urgTxt: "Pas de délai fixé par la loi",
+      phrase: "Une lettre par laquelle quelqu’un vous demande officiellement de payer ou de faire quelque chose, dans un délai qu’il fixe lui-même.",
+      de: "La personne ou l’entreprise avec qui vous êtes en désaccord, ou son avocat. Souvent par lettre recommandée avec avis de réception.",
+      is: "Une interpellation écrite : elle prouve que la demande vous a été faite, à une date certaine. Lorsqu’elle porte sur une somme d’argent, elle fait courir les intérêts au taux légal.",
+      isnot: "Ni un jugement, ni un acte d’exécution. Le délai qu’elle fixe (huit jours, quinze jours) est choisi par son auteur, pas par un juge. Personne ne peut saisir vos biens sur la seule base de cette lettre.",
+      delai: ["Aucun délai légal ne s’impose à vous pour répondre. Le délai indiqué dans la lettre annonce seulement ce que son auteur envisage de faire ensuite, le plus souvent saisir un juge.", "Répondre dans ce délai reste utile : c’est le meilleur moment pour poser votre version des faits, par écrit."],
+      champs: [
+        ["recu", "date", "Date de réception", "La date de remise par La Poste, pas la date écrite sur la lettre."],
+        ["qui", "text", "Qui écrit ?", "La personne, l’entreprise ou l’avocat qui signe."],
+        ["demande", "area", "Ce qui m’est demandé", "Recopiez la phrase de la lettre : payer, faire, cesser, restituer…"],
+        ["montant", "text", "Montant réclamé, s’il y en a un", ""],
+        ["delai", "text", "Délai fixé par la lettre", "Par exemple : « sous huitaine », « sous quinze jours »."],
+        ["suite", "text", "Ce qui est annoncé à défaut", "Par exemple : saisir le tribunal, résilier le contrat."]
+      ],
+      checks: ["La lettre précise sur quoi repose la demande (contrat, devis, facture)", "Les sommes réclamées sont détaillées", "Je conserve l’enveloppe et l’avis de réception"],
+      lois: [["c1344", "Le débiteur est mis en demeure par une sommation ou par un acte portant une interpellation suffisante."], ["c13441", "Pour une somme d’argent, la mise en demeure fait courir l’intérêt au taux légal, sans que le créancier ait à prouver un préjudice."]],
+      todo: ["Je pourrais noter la date de réception et garder l’enveloppe et l’avis de réception.", "Je pourrais vérifier, pièce par pièce, ce qui est dû et ce qui ne l’est pas, avant de répondre.", "Je pourrais répondre par écrit, calmement : contester précisément ce qui doit l’être, et proposer une solution."],
+      eviter: ["Ignorer la lettre. Le silence ne vaut pas accord, mais il laisse l’autre sans réponse et l’incite souvent à aller plus loin.", "Payer dans la précipitation, sans avoir vérifié le fondement et le calcul de la somme.", "Répondre à chaud, avec des reproches que l’on retrouvera ensuite dans le dossier."],
+      questions: ["La somme réclamée est-elle réellement due, et en totalité ?", "Ai-je moi-même quelque chose à reprocher à l’autre, que je devrais faire valoir ?", "Quelle réponse écrite me protège le mieux ?"]
+    },
+    recouvrement: {
+      nom: "La lettre d’une société de recouvrement", court: "Lettre de recouvrement", urg: 1, urgTxt: "Pas de délai fixé par la loi",
+      phrase: "Une lettre d’une société mandatée par votre créancier pour obtenir un paiement à l’amiable.",
+      de: "Une société de recouvrement, agissant pour le compte d’un créancier : un opérateur, une banque, un commerçant…",
+      is: "Une démarche amiable. La loi impose à cette lettre des mentions précises : l’identité du créancier, le fondement de la dette et le détail des sommes, en distinguant le principal et les intérêts.",
+      isnot: "Ni un commissaire de justice, ni un jugement : une société de recouvrement ne peut pas saisir vos biens. Les frais de recouvrement engagés sans titre exécutoire restent en principe à la charge du créancier, sauf exceptions limitées.",
+      delai: ["Aucun délai légal ne court à partir de cette lettre.", "Si la dette n’est pas réglée, le créancier pourra en revanche saisir un juge, par exemple par une requête en injonction de payer."],
+      champs: [
+        ["recu", "date", "Date de réception", ""],
+        ["societe", "text", "Société de recouvrement", ""],
+        ["creancier", "text", "Créancier d’origine", "Pour le compte de qui la société agit-elle ?"],
+        ["fondement", "text", "Fondement de la dette", "Contrat, facture, numéro de dossier…"],
+        ["montant", "text", "Somme réclamée en principal", ""],
+        ["frais", "text", "Frais ajoutés, s’il y en a", "« Frais de dossier », « frais de recouvrement »…"]
+      ],
+      checks: ["La lettre indique le nom et l’adresse du créancier", "Le fondement et le détail de la somme (principal, intérêts) sont indiqués", "Je reconnais cette dette"],
+      lois: [["eR1244", "La lettre doit mentionner l’activité de recouvrement amiable, l’identité du créancier, le fondement et le montant de la somme due, en distinguant ses éléments, et les modalités de paiement."], ["eL1118", "Les frais de recouvrement entrepris sans titre exécutoire restent à la charge du créancier, sauf s’ils concernent un acte que la loi lui impose. Toute clause contraire est réputée non écrite."]],
+      todo: ["Je pourrais demander par écrit le justificatif de la dette (contrat, facture) si je ne la reconnais pas.", "Je pourrais contester par écrit les frais de recouvrement qui me sont réclamés.", "Je pourrais proposer un échéancier si la dette est réelle et que je ne peux pas la payer en une fois."],
+      eviter: ["Payer des frais de recouvrement sans vérifier qu’ils peuvent vous être réclamés.", "Communiquer vos coordonnées bancaires par téléphone sans avoir vérifié l’identité de la société.", "Ignorer la lettre si la dette est réelle : la démarche suivante sera judiciaire, et plus coûteuse."],
+      questions: ["Cette dette est-elle fondée, et n’est-elle pas prescrite ?", "Les frais ajoutés peuvent-ils m’être réclamés ?", "Comment négocier un échéancier ?"]
+    },
+    assignation: {
+      nom: "L’assignation", court: "Assignation", urg: 2, urgTxt: "Une date à tenir",
+      phrase: "Un acte par lequel quelqu’un vous fait convoquer devant un tribunal.",
+      de: "Un commissaire de justice (anciennement huissier de justice), à la demande de votre adversaire.",
+      is: "Le début d’un procès. L’assignation expose ce qu’on vous reproche, en fait et en droit, liste les pièces sur lesquelles repose la demande, et indique le lieu, le jour et l’heure de l’audience ainsi que la façon de comparaître.",
+      isnot: "Une condamnation : le juge n’a encore rien décidé. Mais si vous ne comparaissez pas, vous vous exposez à un jugement rendu sur les seuls éléments de votre adversaire.",
+      delai: ["L’assignation indique elle-même la date de l’audience et les modalités de comparution, notamment si l’assistance d’un avocat est obligatoire. Repérez ces mentions : ce sont elles qui fixent votre calendrier.", "Un accord amiable reste possible jusqu’au jugement."],
+      champs: [
+        ["recu", "date", "Date de remise de l’acte", "Elle figure sur la première page de l’acte."],
+        ["tribunal", "text", "Tribunal saisi", ""],
+        ["audience", "text", "Lieu, jour et heure de l’audience", ""],
+        ["comparution", "area", "Ce que l’acte dit sur la façon de comparaître", "Avocat obligatoire ou non, délai pour se faire représenter…"],
+        ["demande", "area", "Ce qui est demandé contre moi", "Montants, obligations : voir la fin de l’acte (« Par ces motifs » ou « Plaise au tribunal »)."]
+      ],
+      checks: ["La liste des pièces (le bordereau) est jointe à l’acte", "J’ai noté la date d’audience dans mon agenda", "Je sais, d’après l’acte, si un avocat est obligatoire"],
+      lois: [["p56", "L’assignation contient, à peine de nullité, le lieu, le jour et l’heure de l’audience, l’exposé des moyens en fait et en droit, la liste des pièces, et l’indication des modalités de comparution, avec l’avertissement qu’à défaut de comparaître un jugement peut être rendu sur les seuls éléments de l’adversaire."]],
+      todo: ["Je pourrais noter dès aujourd’hui la date d’audience, et la date à laquelle je dois avoir trouvé un avocat si l’acte l’exige.", "Je pourrais rassembler mes pièces et reconstituer la chronologie des faits.", "Je pourrais demander un avis juridique sans attendre, et envisager une proposition amiable."],
+      eviter: ["Ne pas se présenter, ni se faire représenter, à l’audience.", "Attendre les derniers jours pour réagir.", "Contacter l’adversaire de manière agressive : vos messages pourront être produits devant le juge."],
+      questions: ["Un avocat est-il obligatoire devant ce tribunal ?", "Quels arguments et quelles pièces puis-je opposer ?", "Une solution amiable est-elle encore envisageable, et sous quelle forme ?"]
+    },
+    injonction: {
+      nom: "L’ordonnance d’injonction de payer", court: "Injonction de payer", urg: 3, urgTxt: "Délai court",
+      phrase: "La signification d’une décision rendue par un juge, sans débat, qui vous ordonne de payer une somme.",
+      de: "Un commissaire de justice, à la demande de votre créancier, qui a obtenu l’ordonnance auprès du juge.",
+      is: "Le créancier s’est adressé seul au juge : vous n’avez pas encore été entendu. Vous pouvez payer, ou former opposition. L’opposition fait rejuger toute l’affaire, avec un débat, devant le tribunal.",
+      isnot: "Une simple relance. Sans opposition dans le délai, vous ne pourrez plus exercer aucun recours, et le paiement pourra être obtenu contre vous par toutes voies de droit.",
+      delai: ["L’opposition se forme en principe dans le mois qui suit la signification de l’ordonnance. Si l’acte ne vous a pas été remis en mains propres, le point de départ peut être différent.", "L’acte doit indiquer de manière très apparente le délai d’opposition, le tribunal compétent et la façon de faire opposition. Repérez cette mention et entourez-la."],
+      champs: [
+        ["recu", "date", "Date de signification", "Elle figure sur la première page de l’acte."],
+        ["remise", "select", "À qui l’acte a-t-il été remis ?", "", ["", "À moi, en mains propres", "À une autre personne, ou déposé à l’étude du commissaire de justice", "Je ne sais pas"]],
+        ["montant", "text", "Somme réclamée, intérêts et frais compris", ""],
+        ["tribunal", "text", "Tribunal indiqué pour l’opposition", ""],
+        ["delai", "text", "Délai d’opposition indiqué sur l’acte", ""]
+      ],
+      checks: ["J’ai trouvé la mention du délai d’opposition", "Je sais devant quel tribunal former opposition", "Je conteste tout ou partie de la somme"],
+      lois: [["p1416", "L’opposition est formée dans le mois qui suit la signification de l’ordonnance. Si la signification n’a pas été faite à personne, des règles particulières s’appliquent."], ["p1413", "L’acte de signification doit indiquer de manière très apparente le délai d’opposition, le tribunal compétent et les modalités du recours, et avertir qu’à défaut d’opposition aucun recours ne sera plus possible."]],
+      todo: ["Je pourrais entourer sur l’acte la mention du délai d’opposition et l’inscrire dans mon agenda.", "Je pourrais vérifier si je dois réellement cette somme, et en totalité.", "Je pourrais demander un avis juridique rapidement ; si la dette est due, proposer un échéancier au créancier."],
+      eviter: ["Laisser passer le délai d’opposition.", "Prendre l’acte pour une simple relance.", "Former opposition sans savoir ce que l’on conteste."],
+      questions: ["Ai-je intérêt à former opposition ?", "Comment former opposition, et devant quel tribunal ?", "À quelle date expire exactement mon délai ?"]
+    },
+    jugement: {
+      nom: "La signification d’un jugement", court: "Signification d’un jugement", urg: 3, urgTxt: "Délai court",
+      phrase: "L’acte qui vous remet officiellement une décision de justice et fait courir le délai pour la contester.",
+      de: "Un commissaire de justice, à la demande de la partie qui a obtenu la décision.",
+      is: "La décision a déjà été rendue. Sa signification permet de l’exécuter et fait courir le délai de recours : appel, opposition ou pourvoi en cassation, selon les cas.",
+      isnot: "Une nouvelle convocation. Le débat devant ce juge est terminé : seul un recours, dans le délai, permet de faire réexaminer l’affaire.",
+      delai: ["L’acte doit indiquer de manière très apparente le délai et les modalités du recours ouvert. Repérez cette mention : elle est faite pour vous.", "Pour l’appel, le délai de droit commun est d’un mois en matière contentieuse. Certaines décisions ne sont pas susceptibles d’appel, et d’autres délais existent : l’acte le précise."],
+      champs: [
+        ["recu", "date", "Date de signification", "Elle figure sur la première page de l’acte."],
+        ["juridiction", "text", "Juridiction et date du jugement", ""],
+        ["decision", "area", "Ce que le jugement décide", "Lisez la fin du jugement, le « dispositif », qui commence souvent par « Par ces motifs »."],
+        ["recours", "text", "Voie de recours et délai indiqués sur l’acte", "Par exemple : « appel dans le délai d’un mois »."]
+      ],
+      checks: ["J’ai lu le dispositif du jugement", "J’ai trouvé la mention de la voie de recours et de son délai", "Le jugement me condamne à payer une somme"],
+      lois: [["p680", "L’acte de notification d’un jugement doit indiquer de manière très apparente le délai d’opposition, d’appel ou de pourvoi lorsque l’une de ces voies est ouverte, ainsi que les modalités du recours."], ["p538", "Le délai de recours par une voie ordinaire est d’un mois en matière contentieuse et de quinze jours en matière gracieuse."]],
+      todo: ["Je pourrais lire le dispositif du jugement, ligne par ligne, pour savoir exactement ce qui est décidé.", "Je pourrais noter la date limite du recours indiquée sur l’acte.", "Je pourrais demander un avis sur l’intérêt d’un recours ; si je suis condamné à payer, anticiper le paiement ou proposer un échéancier pour éviter des frais d’exécution."],
+      eviter: ["Attendre qu’une saisie arrive pour réagir.", "Former un recours sans en mesurer les risques et le coût.", "Ignorer le jugement en pensant qu’il ne sera pas exécuté."],
+      questions: ["Un recours est-il possible, et a-t-il des chances ?", "Le jugement peut-il déjà être exécuté contre moi ?", "Puis-je obtenir des délais de paiement ?"]
+    },
+    commandement: {
+      nom: "Le commandement de payer aux fins de saisie-vente", court: "Commandement de payer", urg: 3, urgTxt: "Délai très court",
+      phrase: "Le dernier avertissement avant la saisie de vos biens meubles.",
+      de: "Un commissaire de justice, à la demande d’un créancier qui dispose déjà d’un titre exécutoire, par exemple un jugement.",
+      is: "Un acte d’exécution. Il doit mentionner le titre exécutoire sur lequel il repose et le décompte distinct des sommes réclamées : principal, frais et intérêts. Il vous donne huit jours pour payer.",
+      isnot: "Le moment de rediscuter le fond de la dette, en principe tranché par le titre. Mais l’acte et les sommes réclamées peuvent être contestés devant le juge de l’exécution s’ils sont irréguliers.",
+      delai: ["Huit jours pour payer, faute de quoi vos biens meubles peuvent être saisis et vendus.", "Agissez dès réception : le délai est très court."],
+      champs: [
+        ["recu", "date", "Date de remise de l’acte", ""],
+        ["titre", "text", "Titre exécutoire mentionné", "Jugement, ordonnance… avec sa date."],
+        ["total", "text", "Montant total réclamé", ""],
+        ["decompte", "area", "Décompte : principal, frais, intérêts", "Recopiez chaque ligne."]
+      ],
+      checks: ["Je connais le titre exécutoire mentionné (j’ai reçu le jugement)", "Le décompte distingue le principal, les frais et les intérêts", "Je peux payer tout ou partie de la somme"],
+      lois: [["eR2211", "Le commandement de payer contient, à peine de nullité, la mention du titre exécutoire, le décompte distinct des sommes réclamées, et le commandement de payer dans un délai de huit jours, faute de quoi le débiteur peut y être contraint par la vente forcée de ses biens meubles."]],
+      todo: ["Je pourrais vérifier le titre et le décompte, ligne par ligne.", "Je pourrais contacter le commissaire de justice dès aujourd’hui pour proposer un paiement ou un échéancier.", "Je pourrais demander un avis juridique immédiatement si je conteste l’acte ou les sommes."],
+      eviter: ["Laisser passer les huit jours sans réagir.", "Organiser son insolvabilité : vider ses comptes ou céder des biens peut avoir des conséquences pénales.", "Refuser tout contact avec le commissaire de justice."],
+      questions: ["Le décompte est-il exact ?", "Puis-je obtenir des délais de paiement ?", "L’acte est-il régulier ?"]
+    },
+    saisie: {
+      nom: "La dénonciation d’une saisie-attribution", court: "Saisie sur compte", urg: 3, urgTxt: "Délai court",
+      phrase: "L’acte qui vous informe qu’une somme a été bloquée, le plus souvent sur votre compte bancaire, au profit de votre créancier.",
+      de: "Un commissaire de justice, à la demande d’un créancier qui dispose d’un titre exécutoire.",
+      is: "La saisie a déjà eu lieu, chez votre banque ou un autre tiers. L’acte doit indiquer, en caractères très apparents, que les contestations doivent être soulevées dans le délai d’un mois, et la date à laquelle ce délai expire.",
+      isnot: "La fin de toute ressource : une somme à caractère alimentaire reste à votre disposition sur le compte saisi, et l’acte doit en indiquer le montant.",
+      delai: ["Un mois pour contester la saisie devant le juge de l’exécution, à peine d’irrecevabilité.", "La date d’expiration de ce délai figure sur l’acte. Entourez-la."],
+      champs: [
+        ["recu", "date", "Date de la dénonciation", ""],
+        ["fin", "text", "Date d’expiration du délai de contestation indiquée sur l’acte", ""],
+        ["montant", "text", "Somme saisie", ""],
+        ["dispo", "text", "Somme laissée à ma disposition", ""],
+        ["titre", "text", "Titre exécutoire invoqué", ""]
+      ],
+      checks: ["J’ai trouvé la date d’expiration du délai de contestation", "Je connais le titre sur lequel repose la saisie", "Je conteste la saisie ou le montant"],
+      lois: [["eR2113", "La saisie est dénoncée au débiteur dans les huit jours. L’acte indique en caractères très apparents le délai d’un mois pour contester et sa date d’expiration, la juridiction compétente et, pour un compte, la somme à caractère alimentaire laissée à disposition."], ["eR21111", "Les contestations sont formées, à peine d’irrecevabilité, dans le délai d’un mois à compter de la dénonciation."]],
+      todo: ["Je pourrais entourer la date d’expiration du délai et l’inscrire dans mon agenda.", "Je pourrais vérifier le titre invoqué et le montant saisi.", "Je pourrais demander un avis juridique rapidement si je souhaite contester ; sinon, discuter avec le créancier des modalités de la suite."],
+      eviter: ["Attendre la fin du mois pour réagir.", "Croire que la saisie peut être levée par un simple courrier.", "Ouvrir un autre compte pour y transférer des sommes : demandez d’abord conseil."],
+      questions: ["La saisie est-elle régulière ?", "Le montant saisi correspond-il à ce qui est dû ?", "Comment contester, et devant quel juge ?"]
+    },
+    bail: {
+      nom: "Le commandement de payer visant la clause résolutoire", court: "Commandement (bail)", urg: 3, urgTxt: "Délai de six semaines",
+      phrase: "Un acte de votre bailleur qui vous donne six semaines pour régler une dette de loyers ou de charges, faute de quoi le bail pourra être résilié.",
+      de: "Un commissaire de justice, à la demande de votre bailleur.",
+      is: "L’acte doit mentionner le délai de six semaines, le montant du loyer et des charges, le décompte de la dette, la possibilité de saisir le fonds de solidarité pour le logement (FSL) de votre département, dont il précise l’adresse, et celle de demander au juge des délais de paiement.",
+      isnot: "Une expulsion. Mais si la dette n’est pas réglée dans le délai, le bailleur peut demander au juge de constater la résiliation du bail.",
+      delai: ["Six semaines à compter du commandement pour payer la dette.", "Vous pouvez saisir à tout moment le juge pour demander des délais de paiement."],
+      champs: [
+        ["recu", "date", "Date de remise de l’acte", ""],
+        ["dette", "text", "Montant de la dette réclamée", ""],
+        ["loyer", "text", "Loyer et charges mensuels indiqués", ""],
+        ["fsl", "text", "Adresse du FSL indiquée", ""]
+      ],
+      checks: ["Le décompte de la dette correspond à mes paiements", "Je continue de payer le loyer courant", "J’ai l’adresse du FSL de mon département"],
+      lois: [["b24", "La clause de résiliation ne produit effet que six semaines après un commandement de payer demeuré infructueux. Le commandement mentionne ce délai, le décompte de la dette, la possibilité de saisir le FSL et celle de demander au juge un délai de grâce."]],
+      todo: ["Je pourrais vérifier le décompte de la dette, mois par mois.", "Je pourrais contacter sans attendre le FSL indiqué et mon bailleur pour proposer un plan de paiement.", "Je pourrais continuer à payer le loyer courant, et demander un avis juridique sur les délais de paiement."],
+      eviter: ["Laisser passer les six semaines sans rien faire.", "Cesser de payer le loyer courant.", "Rompre le contact avec le bailleur."],
+      questions: ["Le décompte est-il exact ?", "Puis-je obtenir des délais de paiement, et lesquels ?", "Quelles aides puis-je solliciter ?"]
+    }
+  };
+  var ORDER = ["mise", "recouvrement", "assignation", "injonction", "jugement", "commandement", "saisie", "bail"];
+
+  /* Arbre d'identification */
+  var IDENT = {
+    q1: { k: "Identifier le document · 1 sur 2", q: "Comment ce document vous est-il parvenu ?", opts: [
+      { t: "Par La Poste ou par courriel", s: "Lettre simple ou recommandée", go: "q2poste" },
+      { t: "Remis par un commissaire de justice", s: "En mains propres, à un proche, ou à retirer à son étude après un avis de passage", go: "q2cj" },
+      { t: "Je ne sais pas", s: "Voir la liste des documents", go: "all" } ] },
+    q2poste: { k: "Identifier le document · 2 sur 2", q: "Qui vous écrit ?", opts: [
+      { t: "La personne ou l’entreprise avec qui j’ai un différend, ou son avocat", s: "Elle me demande de payer ou de faire quelque chose", doc: "mise" },
+      { t: "Une société de recouvrement", s: "Elle agit « pour le compte » d’un créancier", doc: "recouvrement" },
+      { t: "Un tribunal", s: "Une convocation ou une décision envoyée par le greffe", go: "greffe" } ] },
+    q2cj: { k: "Identifier le document · 2 sur 2", q: "Quel titre figure en haut de l’acte ?", opts: [
+      { t: "Assignation", s: "« Assignation devant le tribunal… »", doc: "assignation" },
+      { t: "Signification d’une ordonnance portant injonction de payer", s: "", doc: "injonction" },
+      { t: "Signification d’un jugement, d’une ordonnance ou d’un arrêt", s: "", doc: "jugement" },
+      { t: "Commandement de payer aux fins de saisie-vente", s: "", doc: "commandement" },
+      { t: "Dénonciation de saisie-attribution", s: "Souvent après un blocage sur un compte bancaire", doc: "saisie" },
+      { t: "Commandement de payer visant la clause résolutoire", s: "Pour un bail d’habitation", doc: "bail" },
+      { t: "Un autre titre", s: "Sommation, procès-verbal, signification d’un autre acte…", go: "autre" } ] }
+  };
+
+  /* ---------- État ---------- */
+  var st = { doc: null, f: {}, c: {}, screen: "intro", path: [] };
+  function load() { try { var r = localStorage.getItem(KEY); if (r) { var d = JSON.parse(r); if (d && typeof d === "object") st = Object.assign(st, d); } } catch (e) {} if (!st.f) st.f = {}; if (!st.c) st.c = {}; if (!Array.isArray(st.path)) st.path = []; }
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) {} }
+  var $ = function (id) { return document.getElementById(id); };
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function show(name, keep) {
+    ["intro", "ident", "fiche", "sheet"].forEach(function (n) { $("s-" + n).classList.toggle("on", n === name); });
+    if (!keep) { st.screen = name; save(); }
+    window.scrollTo(0, 0);
+  }
+  function fdate(v) { if (!v) return ""; var p = v.split("-"); if (p.length !== 3) return v; var m = ["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"]; return Number(p[2]) + (p[2] === "01" ? "er" : "") + " " + m[Number(p[1]) - 1] + " " + p[0]; }
+  function urgBadge(d) { return '<span class="u u' + d.urg + '">' + esc(d.urgTxt) + "</span>"; }
+
+  /* ---------- Accueil ---------- */
+  function initIntro() {
+    var has = st.doc && DOCS[st.doc] && (st.screen === "fiche" || st.screen === "sheet");
+    $("resume").hidden = !has; $("start-row").hidden = !!has;
+    if (has) $("resume-name").textContent = DOCS[st.doc].court;
+  }
+  $("btn-start").onclick = function () { st.path = []; renderIdent("q1"); show("ident"); };
+  $("btn-list").onclick = function () { st.path = []; renderIdent("all"); show("ident"); };
+  $("btn-new").onclick = function () { st.doc = null; st.f = {}; st.c = {}; save(); $("btn-start").onclick(); };
+  $("btn-resume").onclick = function () { renderFiche(); if (st.screen === "sheet") { renderSheet(); show("sheet"); } else show("fiche"); };
+
+  /* ---------- Identification ---------- */
+  function renderIdent(node) {
+    var back = $("ident-back");
+    if (node === "all") {
+      $("ident-kicker").textContent = "Les huit documents de La Lanterne";
+      $("ident-q").textContent = "Lequel avez-vous reçu ?";
+      $("ident-choices").innerHTML = ORDER.map(function (k) { var d = DOCS[k];
+        return '<button class="choice" data-doc="' + k + '"><strong>' + esc(d.nom) + "</strong><span>" + esc(d.phrase) + "</span>" + urgBadge(d) + "</button>"; }).join("") +
+        '<button class="choice" data-go="autre"><strong>Aucun de ces documents</strong><span>Une convocation du greffe, une sommation, un procès-verbal…</span></button>';
+    } else if (node === "autre" || node === "greffe") {
+      $("ident-kicker").textContent = "Document non couvert";
+      $("ident-q").textContent = node === "greffe" ? "Un courrier du tribunal demande une lecture au cas par cas." : "La Lanterne ne couvre pas encore ce document.";
+      $("ident-choices").innerHTML = '<div class="panel"><p>Il existe de nombreux autres actes : convocations et décisions envoyées par le greffe, sommations, procès-verbaux, significations diverses. Chacun obéit à ses propres règles.</p><p><strong>Le réflexe reste le même :</strong> notez la date de réception, cherchez une date d’audience ou un délai écrit en caractères apparents, et gardez l’enveloppe.</p><p style="margin:0">Si un délai semble courir, écrivez au cabinet en le précisant dès votre premier message : <a href="mailto:contact@dsp-avocats.fr?subject=Lecture%20d%E2%80%99un%20acte%20re%C3%A7u">contact@dsp-avocats.fr</a>.</p></div>';
+    } else {
+      var n = IDENT[node];
+      $("ident-kicker").textContent = n.k; $("ident-q").textContent = n.q;
+      $("ident-choices").innerHTML = n.opts.map(function (o) {
+        return '<button class="choice" ' + (o.doc ? 'data-doc="' + o.doc + '"' : 'data-go="' + o.go + '"') + "><strong>" + esc(o.t) + "</strong>" + (o.s ? "<span>" + esc(o.s) + "</span>" : "") + "</button>"; }).join("");
+    }
+    back.setAttribute("data-node", node);
+  }
+  $("ident-choices").addEventListener("click", function (e) {
+    var b = e.target.closest(".choice"); if (!b) return;
+    var doc = b.getAttribute("data-doc"), go = b.getAttribute("data-go");
+    if (doc) { if (st.doc !== doc) { st.f = {}; st.c = {}; } st.doc = doc; renderFiche(); show("fiche"); }
+    else if (go) { st.path.push(b.closest("section").querySelector("#ident-back").getAttribute("data-node")); renderIdent(go); save(); window.scrollTo(0, 0); }
+  });
+  $("ident-back").onclick = function () {
+    if (st.path.length) { renderIdent(st.path.pop()); save(); } else { initIntro(); show("intro"); }
+  };
+
+  /* ---------- Fiche ---------- */
+  function lawHTML(d) {
+    return d.lois.map(function (l) { var r = REF[l[0]]; return '<div class="law"><p>' + esc(l[1]) + '</p><a href="' + r.u + '" target="_blank" rel="noopener">' + esc(r.t) + ", sur Légifrance</a></div>"; }).join("") +
+      '<p class="small muted" style="margin:10px 0 0">' + VERIF + "</p>";
+  }
+  function delayHTML(d) {
+    return "<p>" + urgBadge(d) + "</p>" + d.delai.map(function (t) { return "<p>" + esc(t) + "</p>"; }).join("");
+  }
+  function renderFiche() {
+    var d = DOCS[st.doc]; if (!d) return;
+    $("f-head").innerHTML = '<p class="kicker">La Lanterne éclaire</p><h2>' + esc(d.nom) + "</h2><p>" + esc(d.phrase) + "</p><p><strong style=\"color:#F7F3EA\">Qui l’envoie ?</strong> " + esc(d.de) + "</p>";
+    $("f-is").textContent = d.is; $("f-isnot").textContent = d.isnot;
+    var dl = $("f-delay"); dl.className = "delay" + (d.urg === 3 ? " hot" : ""); dl.innerHTML = delayHTML(d);
+    var h = d.champs.map(function (c) {
+      var id = "fld-" + c[0], v = st.f[c[0]] || "", input;
+      if (c[1] === "area") input = '<textarea id="' + id + '" data-k="' + c[0] + '">' + esc(v) + "</textarea>";
+      else if (c[1] === "select") input = '<select id="' + id + '" data-k="' + c[0] + '">' + c[4].map(function (o) { return '<option value="' + esc(o) + '"' + (o === v ? " selected" : "") + ">" + (o ? esc(o) : "Choisir…") + "</option>"; }).join("") + "</select>";
+      else input = '<input type="' + (c[1] === "date" ? "date" : "text") + '" id="' + id + '" data-k="' + c[0] + '" value="' + esc(v) + '" />';
+      return '<label class="f" for="' + id + '"><span>' + esc(c[2]) + "</span>" + input + (c[3] ? "<small>" + esc(c[3]) + "</small>" : "") + "</label>";
+    }).join("");
+    h += '<ul class="checks">' + d.checks.map(function (t, i) { return '<li><label><input type="checkbox" data-c="' + i + '"' + (st.c[i] ? " checked" : "") + " /> <span>" + esc(t) + "</span></label></li>"; }).join("") + "</ul>";
+    $("f-fields").innerHTML = h;
+    $("f-law").innerHTML = lawHTML(d);
+    $("f-todo").innerHTML = d.todo.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("");
+    $("f-avoid").innerHTML = d.eviter.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("");
+  }
+  $("f-fields").addEventListener("input", function (e) {
+    var k = e.target.getAttribute("data-k"); if (k) { st.f[k] = e.target.value; save(); }
+    var c = e.target.getAttribute("data-c"); if (c !== null) { st.c[c] = e.target.checked; save(); }
+  });
+  $("f-fields").addEventListener("change", function (e) { var c = e.target.getAttribute("data-c"); if (c !== null) { st.c[c] = e.target.checked; save(); } });
+  $("btn-other").onclick = function () { st.path = []; renderIdent("all"); show("ident"); };
+  $("btn-sheet").onclick = function () { renderSheet(); show("sheet"); };
+
+  /* ---------- Fiche de lecture ---------- */
+  function renderSheet() {
+    var d = DOCS[st.doc]; if (!d) return;
+    $("t-sheet").textContent = d.nom;
+    $("sh-date").textContent = "Fiche établie le " + new Date().toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" }) + ".";
+    var dl = $("sh-delay"); dl.className = "delay" + (d.urg === 3 ? " hot" : ""); dl.innerHTML = delayHTML(d);
+    var missing = [];
+    $("sh-fields").innerHTML = d.champs.map(function (c) {
+      var v = st.f[c[0]] || ""; if (c[1] === "date") v = fdate(v);
+      if (!v) missing.push(c[2]);
+      return "<dt>" + esc(c[2]) + "</dt><dd" + (v ? "" : ' class="empty"') + ">" + (v ? esc(v) : "non relevé") + "</dd>";
+    }).join("") + d.checks.map(function (t, i) { return "<dt>" + esc(t) + "</dt><dd>" + (st.c[i] ? "Oui" : "Non, ou pas encore vérifié") + "</dd>"; }).join("");
+    var miss = missing.map(function (m) { return "<li>" + esc(m) + " : à retrouver sur le document, ou à faire préciser.</li>"; });
+    if (!st.f.recu) miss.unshift("<li><strong>La date de réception</strong> : c’est la première information à retrouver, car c’est souvent elle qui fait courir les délais.</li>");
+    $("sh-missing").innerHTML = miss.join("");
+    $("sh-missing-wrap").hidden = !miss.length;
+    $("sh-questions").innerHTML = d.questions.map(function (q) { return "<li>" + esc(q) + "</li>"; }).join("");
+    $("sh-todo").innerHTML = d.todo.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("");
+    $("sh-law").innerHTML = lawHTML(d);
+    var links = [];
+    if (LIENS.sentinelle) links.push('<a href="' + LIENS.sentinelle + '">La Sentinelle</a> pour repérer les délais qui comptent');
+    if (LIENS.trame) links.push('<a href="' + LIENS.trame + '">La Trame</a> pour remettre les faits dans l’ordre');
+    if (LIENS.vigie) links.push('<a href="' + LIENS.vigie + '">La Vigie</a> pour situer où en est le conflit');
+    $("sh-links").innerHTML = links.length ? "Pour aller plus loin : " + links.join(" · ") + "." : "";
+    $("sh-links").hidden = !links.length;
+    $("cta-mail").href = "mailto:contact@dsp-avocats.fr?subject=" + encodeURIComponent("Lecture d’un acte reçu — " + d.court + (d.urg === 3 ? " (délai en cours)" : ""));
+  }
+  $("btn-print").onclick = function () { window.print(); };
+  $("btn-edit").onclick = function () { renderFiche(); show("fiche"); };
+  $("btn-again").onclick = function () { st.doc = null; st.f = {}; st.c = {}; st.path = []; renderIdent("q1"); show("ident"); };
+  $("btn-erase").onclick = function () { if (!this.dataset.armed) { var self = this; self.dataset.armed = "1"; self.dataset.label = self.textContent; self.textContent = "Cliquez à nouveau pour tout effacer"; setTimeout(function () { if (self.dataset.armed) { delete self.dataset.armed; self.textContent = self.dataset.label; } }, 5000); return; } delete this.dataset.armed; setTimeout(function () { try { localStorage.removeItem(KEY); } catch (e) {} }, 0);
+    
+    try { localStorage.removeItem(KEY); } catch (e) {}
+    st = { doc: null, f: {}, c: {}, screen: "intro", path: [] };
+    initIntro(); show("intro"); this.textContent = "Données effacées";
+  };
+  function openMentions() { if (location.hash === "#mentions-legales") $("mentions-legales").open = true; }
+  window.addEventListener("hashchange", openMentions);
+
+  /* ---------- Démarrage ---------- */
+  load(); initIntro(); openMentions(); show("intro", true);
+})();
+</script>
+</body>
+</html>
